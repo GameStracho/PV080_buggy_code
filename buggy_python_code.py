@@ -18,30 +18,30 @@ class Person(object):
     def __init__(self, name):
         self.name = name
 
-    def print_nametag(format_string, person):
-        print(format_string.format(person=person))
+def print_nametag(format_string, person):
+    print(format_string.format(person=person))
 
-    # some documentation
-    def fetch_website(urllib_version, url):
-        # Import the requested version (2 or 3) of urllib
-        exec(f"import urllib{urllib_version} as urllib", globals())
-        # Fetch and print the requested URL
+# some documentation
+def fetch_website(urllib_version, url):
+    # Import the requested version (2 or 3) of urllib
+    exec(f"import urllib{urllib_version} as urllib", globals())
+    # Fetch and print the requested URL
 
-        try: 
-            http = urllib.PoolManager()
-            r = http.request('GET', url)
-        except:
-            print('Exception')
+    try: 
+        http = urllib.PoolManager()
+        r = http.request('GET', url)
+    except:
+        print('Exception')
 
-    def load_yaml(filename):
-        stream = open(filename)
-        deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
-        return deserialized_data
+def load_yaml(filename):
+    stream = open(filename)
+    deserialized_data = yaml.load(stream, Loader=yaml.Loader) # deserializing data
+    return deserialized_data
 
-    def authenticate(password):
-        # Assert that the password is correct
-        assert password == "Iloveyou", "Invalid password!"
-        print("Successfully authenticated!")
+def authenticate(password):
+    # Assert that the password is correct
+    assert password == "Iloveyou", "Invalid password!"
+    print("Successfully authenticated!")
 
 if __name__ == '__main__':
     print("Vulnerabilities:")
